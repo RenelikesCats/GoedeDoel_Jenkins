@@ -1,6 +1,7 @@
 package be.vdab.goededoel;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class GoedeDoel {
 	private final String naam;
@@ -16,5 +17,10 @@ public class GoedeDoel {
 
 	public BigDecimal getOpbrengst() {
 		return opbrengst;
+	}
+
+	@Override
+	public boolean equals(Object object) {
+		return object instanceof GoedeDoel ander && naam.equalsIgnoreCase(ander.naam);
 	}
 }
